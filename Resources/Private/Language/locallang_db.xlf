@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2019-11-09T11:42:08Z" product-name="ns_news_slick">
+		<header/>
+		<body>
+			<trans-unit id="tx_nsnewsslick_domain_model_newsslickslider">
+				<source>News Slick Slider</source>
+			</trans-unit>
+			<trans-unit id="tx_ns_news_slick_newsslickslider.name">
+				<source>NS Slick Slider</source>
+			</trans-unit>
+			<trans-unit id="tx_ns_news_slick_newsslickslider.description">
+				<source>This pluggin allow you to create beautiful slider for your news images on your website.</source>
+			</trans-unit>
+			<trans-unit id="flexforms_tab.slickSlider">
+				<source>Slick Slider Configuration</source>
+			</trans-unit>
+			<trans-unit id="configuration.jquery">
+				<source>Enable Jquery : If this option is set, then it's add jquery in this site ! </source>
+			</trans-unit>
+
+			<trans-unit id="flexform.slicksliderType">
+				<source>Slider View Type</source>
+			</trans-unit>
+			<trans-unit id="slider_type.singleItem">
+				<source>Single Image View</source>
+			</trans-unit>
+			<trans-unit id="slider_type.multipleItem">
+				<source>Multiple Image View</source>
+			</trans-unit>
+			<trans-unit id="slider_type.responsiveItem">
+				<source>Responsive Display</source>
+			</trans-unit>
+			<trans-unit id="flexforms_tab.slickSlider">
+				<source>Slick Slider Configuration</source>
+			</trans-unit>
+
+
+			<trans-unit id="flexform.arrowsNav">
+				<source>Arrows Nav</source>
+			</trans-unit>
+			<trans-unit id="flexform.loop">
+				<source>Loop</source>
+			</trans-unit>
+			<trans-unit id="flexform.keyboardNavEnabled">
+				<source>Keyboard Nav Enabled</source>
+			</trans-unit>
+			<trans-unit id="flexform.controlsInside">
+				<source>Controls Inside</source>
+			</trans-unit>
+			<trans-unit id="flexform.autoScaleSlider">
+				<source>Auto Scale Slider</source>
+			</trans-unit>
+			<trans-unit id="flexform.navigateByClick">
+				<source>Navigate By Click</source>
+			</trans-unit>
+			<trans-unit id="flexform.autoPlay">
+				<source>Auto Play</source>
+			</trans-unit>
+			<trans-unit id="flexform.pauseOnHover">
+				<source>Pause on Hover </source>
+			</trans-unit>
+			<trans-unit id="flexform.pauseDelay">
+				<source>Pause Delay</source>
+			</trans-unit>
+			<trans-unit id="flexform.centerMode">
+				<source>Center Mode</source>
+			</trans-unit>
+			<trans-unit id="flexform.centerPadding">
+				<source>Center Padding</source>
+			</trans-unit>
+
+			<trans-unit id="flexform.transitionType">
+				<source>Transition Type</source>
+			</trans-unit>
+			<trans-unit id="flexform.true">
+				<source>True</source>
+			</trans-unit>
+			<trans-unit id="flexform.false">
+				<source>False</source>
+			</trans-unit>
+			<trans-unit id="flexform.thumbVertical">
+				<source>Vertical</source>
+			</trans-unit>
+			<trans-unit id="flexform.updown">
+				<source>Slider Up-Down</source>
+			</trans-unit>
+			<trans-unit id="flexform.sideways">
+				<source>Slider Sideways</source>
+			</trans-unit>
+			<trans-unit id="flexform.dots">
+				<source>Display Dots</source>
+			</trans-unit>
+			<trans-unit id="flexform.vertical">
+				<source>Display Align</source>
+			</trans-unit>
+			<trans-unit id="flexform.speed">
+				<source>Transmission Speed</source>
+			</trans-unit>
+			<trans-unit id="flexform.autospeed">
+				<source>Autoplay Speed</source>
+			</trans-unit>
+
+			<trans-unit id="flexform.slideToShow">
+				<source>Number of slides to show</source>
+			</trans-unit>
+			<trans-unit id="flexform.slidesToScroll">
+				<source>Number of slides to scroll</source>
+			</trans-unit>
+			<trans-unit id="flexform.variableWidth">
+				<source>Variable width</source>
+			</trans-unit>
+			<trans-unit id="flexform.adaptiveHeight">
+				<source>Adaptive Height</source>
+			</trans-unit>
+			<trans-unit id="flexform.isInfinite">
+				<source>Is Infinite</source>
+			</trans-unit>
+
+			<trans-unit id="flexform.startingPoint">
+				<source>Startingpoint</source>
+			</trans-unit>
+			<trans-unit id="flexform.recursive">
+				<source>Recursive</source>
+			</trans-unit>
+			<trans-unit id="flexform.backPid">
+				<source>List Page ID</source>
+			</trans-unit>
+			<trans-unit id="flexform.excludeAlreadyDisplayedNews">
+				<source>Exclude Displayed News</source>
+			</trans-unit>
+			<trans-unit id="flexform.disableOverrideDemand">
+				<source>Override Demand</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

@@ -1,0 +1,115 @@
+<table class='table table-striped table-hover typo3-extension-list no-footer'>
+    <thead>
+    <tr>
+        <th colspan='2'>
+            <f:translate key="LLL:EXT:ns_news_slick/Resources/Private/Language/locallang_db.xlf:tx_nsnewsslick_domain_model_newsslickslider" />
+        </th>
+    </tr>
+    </thead>
+    <tr>
+        <th><f:translate key="LLL:EXT:ns_news_slick/Resources/Private/Language/locallang_db.xlf:flexform.slicksliderType" /></th>
+        <td><f:translate key="LLL:EXT:ns_news_slick/Resources/Private/Language/locallang_db.xlf:slider_type.{flexformData.settings.slicksliderType}Item" /></td>
+    </tr>
+    <f:if condition="{flexformData.settings.backPid}">
+        <tr>
+            <th><f:translate key="LLL:EXT:ns_news_slick/Resources/Private/Language/locallang_db.xl:flexform.backPid" /></th>
+            <td>{flexformData.settings.backPid}</td>
+        </tr>
+    </f:if>
+    <f:if condition="{flexformData.settings.excludeAlreadyDisplayedNews}">
+        <tr>
+            <th><f:translate key="LLL:EXT:ns_news_slick/Resources/Private/Language/locallang_db.xl:flexform.excludeAlreadyDisplayedNews" /></th>
+            <td><i class="fa fa-check"></i></td>
+        </tr>
+    </f:if>
+    <f:if condition="{flexformData.settings.disableOverrideDemand}">
+        <tr>
+            <th><f:translate key="LLL:EXT:ns_news_slick/Resources/Private/Language/locallang_db.xl:flexform.excludeAlreadyDisplayedNews" /></th>
+            <td><i class="fa fa-check"></i></td>
+        </tr>
+    </f:if>
+    <f:if condition="{flexformData.settings.transitionType} == 'single'">
+        <tr>
+            <th><f:translate key="LLL:EXT:ns_news_slick/Resources/Private/Language/locallang_db.xl:flexform.transitionType" /></th>
+            <td>{f:if(condition: '{flexformData.settings.transitionType}',then: 'Fade',else: 'Move')}</td>
+        </tr>
+    </f:if>
+    <f:if condition="{flexformData.settings.dots}">
+        <tr>
+            <th><f:translate key="LLL:EXT:ns_news_slick/Resources/Private/Language/locallang_db.xl:flexform.dots" /></th>
+            <td><i class="fa fa-check"></i></td>
+        </tr>
+    </f:if>
+    <f:if condition="{flexformData.settings.loop}">
+        <tr>
+            <th><f:translate key="LLL:EXT:ns_news_slick/Resources/Private/Language/locallang_db.xl:flexform.loop" /></th>
+            <td><i class="fa fa-check"></i></td>
+        </tr>
+    </f:if>
+    <f:if condition="{flexformData.settings.autoScaleSlider}">
+        <tr>
+            <th><f:translate key="LLL:EXT:ns_news_slick/Resources/Private/Language/locallang_db.xl:flexform.autoScaleSlider" /></th>
+            <td><i class="fa fa-check"></i></td>
+        </tr>
+    </f:if>
+    <f:if condition="{flexformData.settings.autoPlay}">
+        <tr>
+            <th><f:translate key="LLL:EXT:ns_news_slick/Resources/Private/Language/locallang_db.xl:flexform.autoPlay" /></th>
+            <td><i class="fa fa-check"></i></td>
+        </tr>
+    </f:if>
+    <f:if condition="{flexformData.settings.autoplaySpeed}">
+        <tr>
+            <th><f:translate key="LLL:EXT:ns_news_slick/Resources/Private/Language/locallang_db.xl:flexform.autospeed" /></th>
+            <td>{flexformData.settings.autoplaySpeed}</td>
+        </tr>
+    </f:if>
+    <f:if condition="{flexformData.settings.centerMode}">
+        <tr>
+            <th><f:translate key="LLL:EXT:ns_news_slick/Resources/Private/Language/locallang_db.xl:flexform.centerMode" /></th>
+            <td><i class="fa fa-check"></i></td>
+        </tr>
+    </f:if>
+    <f:if condition="{flexformData.settings.centerPadding}">
+        <tr>
+            <th><f:translate key="LLL:EXT:ns_news_slick/Resources/Private/Language/locallang_db.xl:flexform.centerPadding" /></th>
+            <td>{flexformData.settings.centerPadding}px</td>
+        </tr>
+    </f:if>
+    <f:if condition="{flexformData.settings.slideToShow}">
+        <tr>
+            <th><f:translate key="LLL:EXT:ns_news_slick/Resources/Private/Language/locallang_db.xl:flexform.slideToShow" /></th>
+            <td>{flexformData.settings.slideToShow}</td>
+        </tr>
+    </f:if>
+    <f:if condition="{flexformData.settings.slideToScroll}">
+        <tr>
+            <th><f:translate key="LLL:EXT:ns_news_slick/Resources/Private/Language/locallang_db.xl:flexform.slidesToScroll" /></th>
+            <td>{flexformData.settings.slideToScroll}</td>
+        </tr>
+    </f:if>
+    <f:if condition="{flexformData.settings.variableWidth}">
+        <tr>
+            <th><f:translate key="LLL:EXT:ns_news_slick/Resources/Private/Language/locallang_db.xl:flexform.variableWidth" /></th>
+            <td><i class="fa fa-check"></i></td>
+        </tr>
+    </f:if>
+    <f:if condition="{flexformData.settings.slideSpeed}">
+        <tr>
+            <th><f:translate key="LLL:EXT:ns_news_slick/Resources/Private/Language/locallang_db.xl:flexform.speed" /></th>
+            <td>{flexformData.settings.slideSpeed}</td>
+        </tr>
+    </f:if>
+    <f:if condition="{flexformData.settings.pauseDelay}">
+        <tr>
+            <th><f:translate key="LLL:EXT:ns_news_slick/Resources/Private/Language/locallang_db.xl:flexform.pauseDelay" /></th>
+            <td>{flexformData.settings.pauseDelay}</td>
+        </tr>
+    </f:if>
+    <f:if condition="{flexformData.settings.pauseOnHover}">
+        <tr>
+            <th><f:translate key="LLL:EXT:ns_news_slick/Resources/Private/Language/locallang_db.xl:flexform.pauseOnHover" /></th>
+            <td><i class="fa fa-check"></i></td>
+        </tr>
+    </f:if>
+</table>

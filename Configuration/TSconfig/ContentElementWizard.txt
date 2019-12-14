@@ -1,0 +1,16 @@
+mod {
+    wizards.newContentElement.wizardItems.plugins {
+        elements {
+            newsslickslider {
+                iconIdentifier = ns_news_slick-plugin-newsslickslider
+                title = LLL:EXT:ns_news_slick/Resources/Private/Language/locallang_db.xlf:tx_ns_news_slick_newsslickslider.name
+                description = LLL:EXT:ns_news_slick/Resources/Private/Language/locallang_db.xlf:tx_ns_news_slick_newsslickslider.description
+                tt_content_defValues {
+                    CType = list
+                    list_type = nsnewsslick_newsslickslider
+                }
+            }
+        }
+        show = *
+    }
+}

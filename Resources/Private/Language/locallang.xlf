@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2019-11-09T11:42:08Z" product-name="ns_news_slick">
+		<header/>
+		<body>
+			<trans-unit id="tx_nsnewsslick_domain_model_newsslickslider">
+				<source>News Slick Slider</source>
+			</trans-unit>
+			<trans-unit id="back-link">
+				<source>Back</source>
+			</trans-unit>
+			<trans-unit id="dateFormat" xml:space="preserve">
+				<source>%m/%d/%Y</source>
+			</trans-unit>
+			<trans-unit id="list_nonewsfound" xml:space="preserve">
+				<source>No news available.</source>
+			</trans-unit>
+			<trans-unit id="newsNotFound" xml:space="preserve">
+				<source>The news record is not available anymore.</source>
+			</trans-unit>
+			<trans-unit id="related-news" xml:space="preserve">
+				<source>Related News</source>
+			</trans-unit>
+			<trans-unit id="related-files" xml:space="preserve">
+				<source>Related Files</source>
+			</trans-unit>
+			<trans-unit id="related-links" xml:space="preserve">
+				<source>Related Links</source>
+			</trans-unit>
+			<trans-unit id="author" xml:space="preserve">
+				<source>Created by %s</source>
+			</trans-unit>
+			<trans-unit id="author_simple" xml:space="preserve">
+				<source>Created by</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>
