@@ -1,5 +1,5 @@
 <?php
-namespace Nitsan\NsNewsSlick\Controller;
+namespace NITSAN\NsNewsSlick\Controller;
 
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 

@@ -5,7 +5,7 @@ defined('TYPO3_MODE') or die();
  * Plugin register
  */
 \TYPO3\CMS\Extbase\Utility\ExtensionUtility::registerPlugin(
-    'Nitsan.NsNewsSlick',
+    'NITSAN.NsNewsSlick',
     'Newsslickslider',
     'NS Slick Slider'
 );

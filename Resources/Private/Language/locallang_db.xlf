@@ -67,7 +67,7 @@
 				<source>Center Mode</source>
 			</trans-unit>
 			<trans-unit id="flexform.centerPadding">
-				<source>Center Padding</source>
+				<source>Center Padding (Min: 60, Max: 200)</source>
 			</trans-unit>
 
 			<trans-unit id="flexform.transitionType">

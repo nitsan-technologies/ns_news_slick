@@ -1,5 +1,5 @@
 <?php
-namespace Nitsan\NsNewsSlick\ViewHelpers;
+namespace NITSAN\NsNewsSlick\ViewHelpers;
 
 use TYPO3\CMS\Core\Core\Environment;
 use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;

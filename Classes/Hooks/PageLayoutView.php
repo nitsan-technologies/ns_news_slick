@@ -1,5 +1,5 @@
 <?php
-namespace Nitsan\NsNewsSlick\Hooks;
+namespace NITSAN\NsNewsSlick\Hooks;
 
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Fluid\View\StandaloneView;

@@ -421,7 +421,7 @@
 					<settings.centerMode>
 						<TCEforms>
 							<label>LLL:EXT:ns_news_slick/Resources/Private/Language/locallang_db.xlf:flexform.centerMode</label>
-							<displayCond>FIELD:settings.slicksliderType:!=:single</displayCond>
+							<displayCond>FIELD:settings.slicksliderType:IN:responsive,multiple</displayCond>
 							<onChange>reload</onChange>
 							<config>
 								<type>check</type>
