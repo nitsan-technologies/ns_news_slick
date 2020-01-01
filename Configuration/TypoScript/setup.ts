@@ -21,9 +21,9 @@ plugin.tx_nsnewsslick {
 
 page {
     includeCSS {
-        nsslick = EXT:ns_news_slick/Resources/Public/css/nsslick.css
         slick = EXT:ns_news_slick/Resources/Public/css/slick.css
         slicktheme = EXT:ns_news_slick/Resources/Public/css/slick-theme.css
+        nsslick = EXT:ns_news_slick/Resources/Public/css/nsslick.css
     }
     includeJSFooter {
         slickjs = EXT:ns_news_slick/Resources/Public/js/slick.js

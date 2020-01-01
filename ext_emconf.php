@@ -1,9 +1,9 @@
 <?php
 $EM_CONF[$_EXTKEY] = [
-    'title' => '[NITSAN] News Slick Slider Plugin',
-    'description' => 'This extension will create beautiful slider for your favourite EXT:news extesnion with most-poular jQuery slick slider. Live-Demo: https://demo.t3terminal.com/t3t-extensions/ You can download PRO version for more-features & free-support at https://t3terminal.com/',
+    'title' => '[NITSAN] News Slick Slider',
+    'description' => 'This extension allow you to create beautiful slider for your news images on your website.',
     'category' => 'plugin',
-    'author' => 'T3: Nilesh Malankiya, QA: Siddharth Sheth',
+    'author' => 'NITSAN Technologies',
     'author_email' => 'sanjay@nitsan.in',
     'author_company' => 'NITSAN Technologies Pvt Ltd',
     'state' => 'stable',

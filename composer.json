@@ -1,7 +1,7 @@
 {
     "name": "nitsan/ns-news-slick",
     "type": "typo3-cms-extension",
-    "description": "This extension will create beautiful slider for your favourite EXT:news extesnion with most-poular jQuery slick slider. Live-Demo: https://demo.t3terminal.com/t3t-extensions/ You can download PRO version for more-features & free-support at https://t3terminal.com/",
+    "description": "This extension allow you to create beautiful slider for your news images on your website.",
     "homepage": "https://extensions.typo3.org/extension/ns_news_slick/",
     "license": "GPL-2.0+",
     "keywords": [

@@ -2,23 +2,25 @@
 namespace Nitsan\NsNewsSlick\Hooks;
 
 use TYPO3\CMS\Core\Utility\GeneralUtility;
-use TYPO3\CMS\Extbase\Service\FlexFormService;
 use TYPO3\CMS\Fluid\View\StandaloneView;
 
-class PageLayoutView implements \TYPO3\CMS\Backend\View\PageLayoutViewDrawItemHookInterface {
-
-    public function preProcess(\TYPO3\CMS\Backend\View\PageLayoutView &$parentObject, &$drawItem, &$headerContent, &$itemContent, array &$row) {
-
+class PageLayoutView implements \TYPO3\CMS\Backend\View\PageLayoutViewDrawItemHookInterface
+{
+    public function preProcess(\TYPO3\CMS\Backend\View\PageLayoutView &$parentObject, &$drawItem, &$headerContent, &$itemContent, array &$row)
+    {
         $extKey = 'ns_news_slick';
         if ($row['CType'] == 'list' && $row['list_type'] == 'nsnewsslick_newsslickslider') {
             $drawItem = false;
             $headerContent = '';
             // template
             $view = $this->getFluidTemplate($extKey, 'NsNewsSlick');
-
             if (!empty($row['pi_flexform'])) {
                 /** @var FlexFormService $flexFormService */
-                $flexFormService = GeneralUtility::makeInstance(FlexFormService::class);
+                if (version_compare(TYPO3_branch, '9.0', '>')) {
+                    $flexFormService = GeneralUtility::makeInstance(\TYPO3\CMS\Core\Service\FlexFormService::class);
+                } else {
+                    $flexFormService = GeneralUtility::makeInstance(\TYPO3\CMS\Extbase\Service\FlexFormService::class);
+                }
             }
 
             // assign all to view
@@ -30,7 +32,6 @@ class PageLayoutView implements \TYPO3\CMS\Backend\View\PageLayoutViewDrawItemHo
             // return the preview
             $itemContent = $parentObject->linkEditContent($view->render(), $row);
         }
-
     }
 
     /**

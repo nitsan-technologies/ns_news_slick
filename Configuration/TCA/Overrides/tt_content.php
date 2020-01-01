@@ -4,11 +4,10 @@ defined('TYPO3_MODE') or die();
 /**
  * Plugin register
  */
-
 \TYPO3\CMS\Extbase\Utility\ExtensionUtility::registerPlugin(
-        'Nitsan.NsNewsSlick',
-        'Newsslickslider',
-        'NS Slick Slider'
+    'Nitsan.NsNewsSlick',
+    'Newsslickslider',
+    'NS Slick Slider'
 );
 
 /* Flexform configuration for the slider : START */

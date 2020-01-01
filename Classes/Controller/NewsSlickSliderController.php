@@ -24,15 +24,20 @@ class NewsSlickSliderController extends \GeorgRinger\News\Controller\NewsControl
      */
     protected $newsRepository;
 
-   /**
-     * action list
-     *
-     * @return void
-     */
+    /**
+      * action list
+      *
+      * @return void
+      */
     public function slickSliderAction()
     {
         $newsParam = GeneralUtility::_GP('tx_news_pi1');
-        $newsId = $newsParam['news'];
+        if ($this->settings['singleNews']) {
+            $newsId = $this->settings['singleNews'];
+        } else {
+            $newsId = $newsParam['news'];
+        }
+
         $news = $this->newsRepository->findByUid($newsId);
         $this->view->assign('newsItem', $news);
     }
