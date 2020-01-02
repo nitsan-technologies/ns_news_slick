@@ -22,7 +22,7 @@ call_user_func(
         $iconRegistry->registerIcon(
             'ns_news_slick-plugin-newsslickslider',
             \TYPO3\CMS\Core\Imaging\IconProvider\SvgIconProvider::class,
-            ['source' => 'EXT:ns_news_slick/Resources/Public/Icons/user_plugin_newsslickslider.svg']
+            ['source' => 'EXT:ns_news_slick/Resources/Public/Icons/plugin_icon.svg']
         );
     }
 );

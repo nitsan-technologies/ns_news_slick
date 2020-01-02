@@ -39,7 +39,11 @@ class LoadAssetsViewHelper extends \TYPO3Fluid\Fluid\Core\ViewHelper\AbstractVie
         $this->constant = $GLOBALS['TSFE']->tmpl->setup['plugin.']['tx_.']['persistence.'];
 
         // Define assets path.
-        $this->extPath = str_replace(Environment::getPublicPath() . '/', '', ExtensionManagementUtility::extPath('ns_news_slick') . 'Resources/Public/slider/');
+        if (version_compare(TYPO3_branch, '9.0', '>')) {
+            $this->extPath = str_replace(Environment::getPublicPath() . '/', '', ExtensionManagementUtility::extPath('ns_news_slick') . 'Resources/Public/slider/');
+        } else {
+            $this->extPath = str_replace(PATH_site . '/', '', ExtensionManagementUtility::extPath('ns_news_slick') . 'Resources/Public/slider/');
+        }
         $this->dots = ($settings['dots']=='1') ? 'true':'false';
         $this->autoScale = ($settings['autoScaleSlider']=='1') ? 'true':'false';
         $this->loop = ($settings['loop']=='1') ? 'true':'false';
