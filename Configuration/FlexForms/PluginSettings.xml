@@ -431,7 +431,12 @@
 					<settings.centerPadding>
 						<TCEforms>
 							<label>LLL:EXT:ns_news_slick/Resources/Private/Language/locallang_db.xlf:flexform.centerPadding</label>
-							<displayCond>FIELD:settings.centerMode:=:1</displayCond>
+							<displayCond>
+								<and>
+									<value1>FIELD:settings.centerMode:=:1</value1>
+									<value2>FIELD:settings.slicksliderType:IN:responsive,multiple</value2>
+								</and>
+							</displayCond>
 							<config>
 								<type>input</type>
 								<eval>int</eval>
