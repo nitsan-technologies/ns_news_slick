@@ -17,6 +17,7 @@ class LoadAssetsViewHelper extends \TYPO3Fluid\Fluid\Core\ViewHelper\AbstractVie
     protected $codeBlock='';
     protected $autoplay;
     protected $pauseOnHover;
+    protected $cid;
     /**
      * Initialize
      *
@@ -29,12 +30,12 @@ class LoadAssetsViewHelper extends \TYPO3Fluid\Fluid\Core\ViewHelper\AbstractVie
 
     public function render()
     {
-
+         
         // Collect the settings.
         $settings = $this->templateVariableContainer->get('settings');
         $cData = $this->templateVariableContainer->get('contentObjectData');
-        $elementId = 'nsslick-' . $cData['uid'];
-
+        $this->cid = $elementId = 'nsslick-' . $cData['uid'];
+        
         // set js value for slider
         $this->constant = $GLOBALS['TSFE']->tmpl->setup['plugin.']['tx_.']['persistence.'];
 
@@ -67,7 +68,7 @@ class LoadAssetsViewHelper extends \TYPO3Fluid\Fluid\Core\ViewHelper\AbstractVie
     }
 
     public function singleImageView($pageRender, $selector, $settings)
-    {
+    {   
         $this->startBlock($selector);
         $this->codeBlock .= '
           dots: ' . $this->dots . ',
@@ -172,12 +173,12 @@ class LoadAssetsViewHelper extends \TYPO3Fluid\Fluid\Core\ViewHelper\AbstractVie
 
     public function startBlock($selector)
     {
-        $this->codeBlock = " $('#" . $selector . "').slick({ ";
+        $this->codeBlock .= " $('#" . $selector . "').slick({ ";
     }
 
     public function endBlock($pageRender)
     {
         $this->codeBlock .= '});';
-        $pageRender->addJsFooterInlineCode('slick-config', $this->codeBlock, true);
+        $pageRender->addJsFooterInlineCode('slick-config-'. $this->cid, $this->codeBlock);
     }
 }
