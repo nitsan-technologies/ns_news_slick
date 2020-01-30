@@ -27,6 +27,7 @@ page {
     }
     includeJSFooter {
         slickjs = EXT:ns_news_slick/Resources/Public/js/slick.js
+        nsslickjs = EXT:ns_news_slick/Resources/Public/js/nsslick.js
     }
     settings < plugin.tx_nsnewsslick.settings
 }
