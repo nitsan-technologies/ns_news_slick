@@ -32,8 +32,8 @@ page {
     settings < plugin.tx_nsnewsslick.settings
 }
 
-[globalVar = LIT:1 = {$plugin.tx_nsnewsslick.includejs.includeJquery}]
-    page {
+[{$plugin.tx_nsnewsslick.includejs.includeJquery} == 1]
+	page {
         includeJS {
             JQuery = EXT:ns_news_slick/Resources/Public/js/jquery-3.4.1.min.js
         }

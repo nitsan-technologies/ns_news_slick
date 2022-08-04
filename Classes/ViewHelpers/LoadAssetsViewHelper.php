@@ -37,7 +37,7 @@ class LoadAssetsViewHelper extends \TYPO3Fluid\Fluid\Core\ViewHelper\AbstractVie
         $this->cid = $elementId = 'nsslick-' . $cData['uid'];
         
         // set js value for slider
-        $this->constant = $GLOBALS['TSFE']->tmpl->setup['plugin.']['tx_.']['persistence.'];
+        $this->constant = isset($GLOBALS['TSFE']->tmpl->setup['plugin.']['tx_.']['persistence.']) ? $GLOBALS['TSFE']->tmpl->setup['plugin.']['tx_.']['persistence.'] : '';
 
         // Define assets path.
         if (version_compare(TYPO3_branch, '9.0', '>')) {
@@ -45,6 +45,13 @@ class LoadAssetsViewHelper extends \TYPO3Fluid\Fluid\Core\ViewHelper\AbstractVie
         } else {
             $this->extPath = str_replace(PATH_site . '/', '', ExtensionManagementUtility::extPath('ns_news_slick') . 'Resources/Public/slider/');
         }
+
+        $settings['dots'] = isset($settings['dots']) ? $settings['dots'] : '';
+        $settings['autoScaleSlider'] = isset($settings['autoScaleSlider']) ? $settings['autoScaleSlider'] : '';
+        $settings['loop'] = isset($settings['loop']) ? $settings['loop'] : '';
+        $settings['variableWidth'] = isset($settings['variableWidth']) ? $settings['variableWidth'] : '';
+        $settings['autoPlay'] = isset($settings['autoPlay']) ? $settings['autoPlay'] : '';
+        $settings['pauseOnHover'] = isset($settings['pauseOnHover']) ? $settings['pauseOnHover'] : '';
         $this->dots = ($settings['dots']=='1') ? 'true':'false';
         $this->autoScale = ($settings['autoScaleSlider']=='1') ? 'true':'false';
         $this->loop = ($settings['loop']=='1') ? 'true':'false';
@@ -54,7 +61,7 @@ class LoadAssetsViewHelper extends \TYPO3Fluid\Fluid\Core\ViewHelper\AbstractVie
         // Create pageRender instance.
         $pageRender = GeneralUtility::makeInstance(\TYPO3\CMS\Core\Page\PageRenderer::class);
 
-        switch ($settings[slicksliderType]) {
+        switch ($settings['slicksliderType']) {
             case 'single':
                 $this->singleImageView($pageRender, $elementId, $settings);
                 break;
@@ -70,6 +77,8 @@ class LoadAssetsViewHelper extends \TYPO3Fluid\Fluid\Core\ViewHelper\AbstractVie
     public function singleImageView($pageRender, $selector, $settings)
     {   
         $this->startBlock($selector);
+        $settings['transitionType'] = isset($settings['transitionType']) ? $settings['transitionType'] : '';
+        $settings['autoplaySpeed'] = isset($settings['autoplaySpeed']) ? $settings['autoplaySpeed'] : '';
         $this->codeBlock .= '
           dots: ' . $this->dots . ',
           infinite: ' . $this->loop . ',
@@ -107,6 +116,7 @@ class LoadAssetsViewHelper extends \TYPO3Fluid\Fluid\Core\ViewHelper\AbstractVie
             centerPadding:'" . $settings['centerPadding'] . "px',
             ";
         }
+        $settings['autoplaySpeed'] = isset($settings['autoplaySpeed']) ? $settings['autoplaySpeed'] : '';
         if ($settings['autoplaySpeed'] !=0) {
             $this->codeBlock .= 'autoplaySpeed:' . $settings['autoplaySpeed'] . ',';
         }
@@ -161,6 +171,7 @@ class LoadAssetsViewHelper extends \TYPO3Fluid\Fluid\Core\ViewHelper\AbstractVie
             centerPadding:'" . $settings['centerPadding'] . "px',
             ";
         }
+        $settings['autoplaySpeed'] = isset($settings['autoplaySpeed']) ? $settings['autoplaySpeed'] : '';
         if ($settings['autoplaySpeed'] !=0) {
             $this->codeBlock .= 'autoplaySpeed:' . $settings['autoplaySpeed'] . ',';
         }

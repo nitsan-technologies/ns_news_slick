@@ -286,6 +286,7 @@
 							<onChange>reload</onChange>
 							<config>
 								<type>select</type>
+								<renderType>selectSingle</renderType>
 								<items>
 									<numIndex index="1">
 										<numIndex index="0">LLL:EXT:ns_news_slick/Resources/Private/Language/locallang_db.xlf:slider_type.singleItem</numIndex>
@@ -351,6 +352,7 @@
 							<displayCond>FIELD:settings.slicksliderType:=:single</displayCond>
 							<config>
 								<type>select</type>
+								<renderType>selectSingle</renderType>
 								<items>
 									<numIndex index="1">
 										<numIndex index="0">Move</numIndex>

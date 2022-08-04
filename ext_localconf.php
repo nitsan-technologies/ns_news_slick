@@ -3,15 +3,21 @@ defined('TYPO3_MODE') || die('Access denied.');
 
 call_user_func(
     function () {
+        if (version_compare(TYPO3_branch, '10.0', '>=')) {
+            $moduleClass = \NITSAN\NsNewsSlick\Controller\NewsSlickSliderController::class;
+        } else {
+            $moduleClass = 'NewsSlickSlider';
+        }
+
         \TYPO3\CMS\Extbase\Utility\ExtensionUtility::configurePlugin(
             'NITSAN.NsNewsSlick',
             'Newsslickslider',
             [
-                'NewsSlickSlider' => 'slickSlider'
+                $moduleClass => 'slickSlider'
             ],
             // non-cacheable actions
             [
-                'NewsSlickSlider' => ''
+                $moduleClass => ''
             ]
         );
 
