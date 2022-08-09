@@ -77,18 +77,19 @@ class LoadAssetsViewHelper extends \TYPO3Fluid\Fluid\Core\ViewHelper\AbstractVie
     public function singleImageView($pageRender, $selector, $settings)
     {   
         $this->startBlock($selector);
-        $settings['transitionType'] = isset($settings['transitionType']) ? $settings['transitionType'] : '';
-        $settings['autoplaySpeed'] = isset($settings['autoplaySpeed']) ? $settings['autoplaySpeed'] : '';
+        $settings['transitionType'] = isset($settings['transitionType']) ? $settings['transitionType'] : 'false';
+        $settings['autoplaySpeed'] = isset($settings['autoplaySpeed']) ? $settings['autoplaySpeed'] : 1000;
+        
         $this->codeBlock .= '
           dots: ' . $this->dots . ',
           infinite: ' . $this->loop . ',
-          fade:' . $settings['transitionType'] . ",
-          cssEase: 'linear',
-          adaptiveHeight: $this->autoScale,
-          autoplay:" . $this->autoplay . ',
+          fade:' . $settings["transitionType"] . ',
+          cssEase: "linear",
+          adaptiveHeight:'. $this->autoScale .',
+          autoplay:' . $this->autoplay . ',
           pauseOnHover:' . $this->pauseOnHover . ',
         ';
-        if ($settings['autoplaySpeed'] !=0) {
+        if ($settings['autoplaySpeed'] !=0 && $this->autoplay == 'true') {
             $this->codeBlock .= 'autoplaySpeed:' . $settings['autoplaySpeed'] . ',';
         }
         if ($settings['slideSpeed']!=0 && !$this->autoplay) {
@@ -110,14 +111,16 @@ class LoadAssetsViewHelper extends \TYPO3Fluid\Fluid\Core\ViewHelper\AbstractVie
           autoplay:' . $this->autoplay . ',
           pauseOnHover:' . $this->pauseOnHover . ',';
 
+          $settings['centerMode'] = isset($settings['centerMode']) ? $settings['centerMode'] : 0;
         if ($settings['centerMode']!=0) {
+            $settings['centerPadding'] = isset($settings['centerPadding']) ? $settings['centerPadding'] : 60;
             $this->codeBlock .= "
             centerMode: true,
             centerPadding:'" . $settings['centerPadding'] . "px',
             ";
         }
         $settings['autoplaySpeed'] = isset($settings['autoplaySpeed']) ? $settings['autoplaySpeed'] : '';
-        if ($settings['autoplaySpeed'] !=0) {
+        if ($settings['autoplaySpeed'] !=0 && $this->autoplay == 'true') {
             $this->codeBlock .= 'autoplaySpeed:' . $settings['autoplaySpeed'] . ',';
         }
         if ($settings['slideSpeed']!=0 && !$this->autoplay) {
@@ -164,14 +167,15 @@ class LoadAssetsViewHelper extends \TYPO3Fluid\Fluid\Core\ViewHelper\AbstractVie
             }
           ],
           pauseOnHover:' . $this->pauseOnHover . ',';
-
+          $settings['centerMode'] = isset($settings['centerMode']) ? $settings['centerMode'] : 0;
         if ($settings['centerMode']!=0) {
+            $settings['centerPadding'] = isset($settings['centerPadding']) ? $settings['centerPadding'] : 60;
             $this->codeBlock .= "
             centerMode: true,
             centerPadding:'" . $settings['centerPadding'] . "px',
             ";
         }
-        $settings['autoplaySpeed'] = isset($settings['autoplaySpeed']) ? $settings['autoplaySpeed'] : '';
+        $settings['autoplaySpeed'] = isset($settings['autoplaySpeed']) ? $settings['autoplaySpeed'] : 0;
         if ($settings['autoplaySpeed'] !=0) {
             $this->codeBlock .= 'autoplaySpeed:' . $settings['autoplaySpeed'] . ',';
         }
@@ -184,12 +188,12 @@ class LoadAssetsViewHelper extends \TYPO3Fluid\Fluid\Core\ViewHelper\AbstractVie
 
     public function startBlock($selector)
     {
-        $this->codeBlock .= " $('#" . $selector . "').slick({ ";
+        $this->codeBlock .= "setTimeout(function() { $('#" . $selector . "').slick({ ";
     }
 
     public function endBlock($pageRender)
     {
-        $this->codeBlock .= '});';
+        $this->codeBlock .= '});}, 200);';
         $pageRender->addJsFooterInlineCode('slick-config-'. $this->cid, $this->codeBlock);
     }
 }
