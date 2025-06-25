@@ -1,11 +1,11 @@
 <?php
 $EM_CONF[$_EXTKEY] = [
-    'title' => '[NITSAN] News Slick Slider',
-    'description' => 'This extension allow you to create beautiful slider for your news images on your website.',
+    'title' => 'News Slick Slider',
+    'description' => 'Easily display your TYPO3 news images in an attractive and responsive slick slider. Enhance user engagement by showcasing featured news articles with a modern and flexible carousel layout.',
     'category' => 'plugin',
-    'author' => 'NITSAN Technologies Pvt Ltd',
-    'author_email' => 'sanjay@nitsan.in',
-    'author_company' => 'NITSAN Technologies Pvt Ltd',
+    'author' => 'Team T3Planet',
+    'author_email' => 'info@t3planet.de',
+    'author_company' => 'T3Planet',
     'state' => 'stable',
     'internal' => '',
     'uploadfolder' => 0,
