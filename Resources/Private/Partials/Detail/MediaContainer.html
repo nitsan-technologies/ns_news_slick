@@ -4,8 +4,8 @@
 	<f:if condition="{settings.slicksliderType} == 'single'">
 		<f:then>
 			<section class="slider" id="nsslick-{contentId}"
-			    style='width:{f:if(condition: settings.media.maxWidth, then: settings.media.maxWidth, else:
-			    settings.detail.media.image.maxWidth)}px;height:{f:if(condition: settings.media.maxHeight, then:
+			    style='max-width:{f:if(condition: settings.media.maxWidth, then: settings.media.maxWidth, else:
+			    settings.detail.media.image.maxWidth)}px;max-height:{f:if(condition: settings.media.maxHeight, then:
 			    settings.media.maxHeight, else: settings.detail.media.image.maxHeight)}px;display:none'>
 		</f:then>
 		<f:else>

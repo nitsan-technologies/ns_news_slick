@@ -1,8 +1,8 @@
 {
     "name": "nitsan/ns-news-slick",
     "type": "typo3-cms-extension",
-    "description": "This extension allow you to create beautiful slider for your news images on your website.",
-    "homepage": "https://extensions.typo3.org/extension/ns_news_slick/",
+    "description": "This extension allow you to create beautiful slider for your news images on your website. https://t3planet.com/news-slick-slider-typo3-extension",
+    "homepage": "https://t3planet.com/news-slick-slider-typo3-extension",
     "license": "GPL-2.0+",
     "keywords": [
         "TYPO3 CMS",
@@ -10,12 +10,10 @@
         "NITSAN",
         "Slick Slider"
     ],
-    "support": {
-        "issues": "https://github.com/nitsan-technologies/ns_news_slick/issues"
-    },
     "require": {
-        "typo3/cms-core": ">=6.2.0",
-        "georgringer/news": ">=3.0.0"
+        "typo3/cms-core": "^12 || ^13",
+        "georgringer/news": "^12",
+        "nitsan/ns-license": "^13.0.4"
     },
     "autoload": {
         "psr-4": {

@@ -1,0 +1,28 @@
+services:
+  _defaults:
+    autowire: true
+    autoconfigure: true
+    public: false
+
+  NITSAN\NsNewsSlick\:
+    resource: '../Classes/*'
+
+  NITSAN\NsNewsSlick\Event\Setup:
+    tags:
+      - name: event.listener
+        identifier: 'ns-news-slick'
+        method: 'executeOnSignal'
+        event: TYPO3\CMS\Core\Package\Event\AfterPackageActivationEvent
+
+  NITSAN\NsNewsSlick\Event\BackendUserLogin:
+    tags:
+      - name: event.listener
+        identifier: 'ns-news-slick-backend-login'
+        method: 'dispatch'
+        event: TYPO3\CMS\Core\Authentication\Event\AfterUserLoggedInEvent
+
+  NITSAN\NsNewsSlick\Event\PageLayoutView:
+    tags:
+      - name: event.listener
+        identifier: 'ns-news-slick-flexform-process'
+        event: TYPO3\CMS\Backend\View\Event\PageContentPreviewRenderingEvent

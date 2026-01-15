@@ -1,60 +1,106 @@
 <?php
+
 namespace NITSAN\NsNewsSlick\ViewHelpers;
 
 use TYPO3\CMS\Core\Core\Environment;
-use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
+use TYPO3\CMS\Core\Page\PageRenderer;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
+use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
+use TYPO3Fluid\Fluid\Core\ViewHelper\AbstractViewHelper;
 use TYPO3Fluid\Fluid\Core\ViewHelper\Traits\CompileWithRenderStatic;
 
-class LoadAssetsViewHelper extends \TYPO3Fluid\Fluid\Core\ViewHelper\AbstractViewHelper
+/**
+ *
+ */
+class LoadAssetsViewHelper extends AbstractViewHelper
 {
     use CompileWithRenderStatic;
-    protected $constant;
-    protected $dots;
-    protected $autoScale;
-    protected $loop;
-    protected $variableWidth;
-    protected $codeBlock='';
-    protected $autoplay;
-    protected $pauseOnHover;
-    protected $cid;
+
+
+    /**
+     * @var string
+     */
+    protected string $dots = '';
+
+    /**
+     * @var string
+     */
+    protected string $autoScale;
+
+    /**
+     * @var string
+     */
+    protected string $loop = '';
+
+    /**
+     * @var string
+     */
+    protected string $variableWidth = '';
+
+    /**
+     * @var string
+     */
+    protected string $codeBlock = '';
+
+    /**
+     * @var string
+     */
+    protected string $autoplay = '';
+
+    /**
+     * @var string
+     */
+    protected string $pauseOnHover = '';
+
+    /**
+     * @var string
+     */
+    protected string $cid = '';
+
+    /**
+     * @var string
+     */
+    protected string $extPath = '';
+
     /**
      * Initialize
      *
      * @return void
      */
-    public function initializeArguments()
+    public function initializeArguments(): void
     {
         parent::initializeArguments();
     }
 
-    public function render()
+    /**
+     * @return void
+     */
+    public function render(): void
     {
-         
         // Collect the settings.
         $settings = $this->templateVariableContainer->get('settings');
         $cData = $this->templateVariableContainer->get('contentObjectData');
         $this->cid = $elementId = 'nsslick-' . $cData['uid'];
-        
-        // set js value for slider
-        $this->constant = $GLOBALS['TSFE']->tmpl->setup['plugin.']['tx_.']['persistence.'];
 
         // Define assets path.
-        if (version_compare(TYPO3_branch, '9.0', '>')) {
-            $this->extPath = str_replace(Environment::getPublicPath() . '/', '', ExtensionManagementUtility::extPath('ns_news_slick') . 'Resources/Public/slider/');
-        } else {
-            $this->extPath = str_replace(PATH_site . '/', '', ExtensionManagementUtility::extPath('ns_news_slick') . 'Resources/Public/slider/');
-        }
-        $this->dots = ($settings['dots']=='1') ? 'true':'false';
-        $this->autoScale = ($settings['autoScaleSlider']=='1') ? 'true':'false';
-        $this->loop = ($settings['loop']=='1') ? 'true':'false';
-        $this->variableWidth = ($settings['variableWidth']=='1') ? 'true':'false';
-        $this->autoplay = ($settings['autoPlay']=='1') ? 'true':'false';
-        $this->pauseOnHover = ($settings['pauseOnHover']=='1') ? 'true':'false';
-        // Create pageRender instance.
-        $pageRender = GeneralUtility::makeInstance(\TYPO3\CMS\Core\Page\PageRenderer::class);
+        $this->extPath = str_replace(Environment::getPublicPath() . '/', '', ExtensionManagementUtility::extPath('ns_news_slick') . 'Resources/Public/slider/');
 
-        switch ($settings[slicksliderType]) {
+        $settings['dots'] = $settings['dots'] ?? '0';
+        $settings['autoScaleSlider'] = $settings['autoScaleSlider'] ?? '0';
+        $settings['loop'] = $settings['loop'] ?? '0';
+        $settings['variableWidth'] = $settings['variableWidth'] ?? '0';
+        $settings['autoPlay'] = $settings['autoPlay'] ?? '0';
+        $settings['pauseOnHover'] = $settings['pauseOnHover'] ?? '0';
+
+        $this->dots = ($settings['dots'] == '1') ? 'true' : 'false';
+        $this->autoScale = ($settings['autoScaleSlider'] == '1') ? 'true' : 'false';
+        $this->loop = ($settings['loop'] == '1') ? 'true' : 'false';
+        $this->variableWidth = ($settings['variableWidth'] == '1') ? 'true' : 'false';
+        $this->autoplay = ($settings['autoPlay'] == '1') ? 'true' : 'false';
+        $this->pauseOnHover = ($settings['pauseOnHover'] == '1') ? 'true' : 'false';
+        // Create pageRender instance.
+        $pageRender = GeneralUtility::makeInstance(PageRenderer::class);
+        switch ($settings['slicksliderType']) {
             case 'single':
                 $this->singleImageView($pageRender, $elementId, $settings);
                 break;
@@ -67,8 +113,15 @@ class LoadAssetsViewHelper extends \TYPO3Fluid\Fluid\Core\ViewHelper\AbstractVie
         }
     }
 
-    public function singleImageView($pageRender, $selector, $settings)
-    {   
+    /**
+     * @param $pageRender
+     * @param $selector
+     * @param $settings
+     * @return void
+     */
+    public function singleImageView($pageRender, $selector, $settings): void
+    {
+        $settings['transitionType'] = $settings['transitionType'] ?? 0 ;
         $this->startBlock($selector);
         $this->codeBlock .= '
           dots: ' . $this->dots . ',
@@ -79,53 +132,60 @@ class LoadAssetsViewHelper extends \TYPO3Fluid\Fluid\Core\ViewHelper\AbstractVie
           autoplay:" . $this->autoplay . ',
           pauseOnHover:' . $this->pauseOnHover . ',
         ';
-        if ($settings['autoplaySpeed'] !=0) {
-            $this->codeBlock .= 'autoplaySpeed:' . $settings['autoplaySpeed'] . ',';
-        }
-        if ($settings['slideSpeed']!=0 && !$this->autoplay) {
-            $this->codeBlock .= 'speed:' . $settings['slideSpeed'];
-        }
-        $this->endBlock($pageRender);
+        $this->commonSettings($settings, $pageRender);
     }
 
-    public function multipleView($pageRender, $selector, $settings)
+    /**
+     * @param $pageRender
+     * @param $selector
+     * @param $settings
+     * @return void
+     */
+    public function multipleView($pageRender, $selector, $settings): void
     {
         $this->startBlock($selector);
+      
+        $slideToShow = $settings['slideToShow'] ?? '1';
+        $slideToScroll = $settings['slideToScroll'] ?? '1';
 
         $this->codeBlock .= '
           dots: ' . $this->dots . ',
           infinite: ' . $this->loop . ',
-          slidesToShow: ' . $settings['slideToShow'] . ',
-          slidesToScroll: ' . $settings['slideToScroll'] . ',
+          slidesToShow: ' . $slideToShow . ',
+          slidesToScroll: ' . $slideToScroll . ',
           variableWidth: ' . $this->variableWidth . ',
           autoplay:' . $this->autoplay . ',
           pauseOnHover:' . $this->pauseOnHover . ',';
 
-        if ($settings['centerMode']!=0) {
+        if (isset($settings['centerMode']) && $settings['centerMode'] != 0) {
             $this->codeBlock .= "
             centerMode: true,
-            centerPadding:'" . $settings['centerPadding'] . "px',
             ";
-        }
-        if ($settings['autoplaySpeed'] !=0) {
-            $this->codeBlock .= 'autoplaySpeed:' . $settings['autoplaySpeed'] . ',';
-        }
-        if ($settings['slideSpeed']!=0 && !$this->autoplay) {
-            $this->codeBlock .= 'speed:' . $settings['slideSpeed'];
+            if (isset($settings['centerPadding'])) {
+                $this->codeBlock .= "centerPadding:'" . $settings['centerPadding'] . "px',";
+            }
         }
 
-        $this->endBlock($pageRender);
+        $this->commonSettings($settings, $pageRender);
     }
 
-    public function responsiveView($pageRender, $selector, $settings)
+    /**
+     * @param $pageRender
+     * @param $selector
+     * @param $settings
+     * @return void
+     */
+    public function responsiveView($pageRender, $selector, $settings): void
     {
         $this->startBlock($selector);
+        $slideToShow = $settings['slideToShow'] ?? '1';
+        $slideToScroll = $settings['slideToScroll'] ?? '1';
 
         $this->codeBlock .= '
           dots: ' . $this->dots . ',
           infinite: ' . $this->loop . ',
-          slidesToShow: ' . $settings['slideToShow'] . ',
-          slidesToScroll: ' . $settings['slideToScroll'] . ',
+          slidesToShow: ' . $slideToShow . ',
+          slidesToScroll: ' . $slideToScroll . ',
           variableWidth: ' . $this->variableWidth . ',
           autoplay:' . $this->autoplay . ',
           responsive: [
@@ -155,30 +215,49 @@ class LoadAssetsViewHelper extends \TYPO3Fluid\Fluid\Core\ViewHelper\AbstractVie
           ],
           pauseOnHover:' . $this->pauseOnHover . ',';
 
-        if ($settings['centerMode']!=0) {
+        if (isset($settings['centerMode']) && $settings['centerMode'] != 0) {
+          $centerPadding = $settings['centerPadding'] ?? '';
             $this->codeBlock .= "
             centerMode: true,
-            centerPadding:'" . $settings['centerPadding'] . "px',
+            centerPadding:'" .  $centerPadding . "px',
             ";
         }
-        if ($settings['autoplaySpeed'] !=0) {
-            $this->codeBlock .= 'autoplaySpeed:' . $settings['autoplaySpeed'] . ',';
-        }
-        if ($settings['slideSpeed']!=0 && !$this->autoplay) {
-            $this->codeBlock .= 'speed:' . $settings['slideSpeed'];
-        }
-
-        $this->endBlock($pageRender);
+        $this->commonSettings($settings, $pageRender);
     }
 
-    public function startBlock($selector)
+    /**
+     * @param $selector
+     * @return void
+     */
+    public function startBlock($selector): void
     {
         $this->codeBlock .= " $('#" . $selector . "').slick({ ";
     }
 
-    public function endBlock($pageRender)
+    /**
+     * @param $pageRender
+     * @return void
+     */
+    public function endBlock($pageRender): void
     {
         $this->codeBlock .= '});';
-        $pageRender->addJsFooterInlineCode('slick-config-'. $this->cid, $this->codeBlock);
+        $pageRender->addJsFooterInlineCode('slick-config-' . $this->cid, $this->codeBlock);
+    }
+
+    /**
+     * @param $settings
+     * @param $pageRender
+     * @return void
+     */
+    public function commonSettings($settings, $pageRender): void
+    {
+        $settings['autoplaySpeed'] = ($settings['autoplaySpeed']) ?? 0;
+        if ($settings['autoplaySpeed'] != 0 && $this->autoplay == 'true') {
+            $this->codeBlock .= 'autoplaySpeed:' . $settings['autoplaySpeed'] . ',';
+        }
+        if ($settings['slideSpeed'] != 0 && $this->autoplay == 'false') {
+            $this->codeBlock .= 'speed:' . $settings['slideSpeed'];
+        }
+        $this->endBlock($pageRender);
     }
 }
