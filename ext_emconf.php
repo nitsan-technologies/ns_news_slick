@@ -15,7 +15,6 @@ $EM_CONF['ns_news_slick'] = [
         'depends' => [
             'typo3' => '12.0.0-13.9.99',
             'news' => '12.0.0-12.9.99',
-            'ns_license' => '13.0.4-13.9.99',
         ],
         'conflicts' => [],
         'suggests' => [],
