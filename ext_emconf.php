@@ -1,20 +1,21 @@
 <?php
-
-$EM_CONF['ns_news_slick'] = [
+$EM_CONF[$_EXTKEY] = [
     'title' => 'News Slick Slider',
-    'description' => 'This extension allow you to create beautiful slider for your news images on your website. https://t3planet.com/news-slick-slider-typo3-extension',    'category' => 'plugin',
-    'author' => 'T3: Nilesh Malankiya, T3: Himanshu Ramavat, QA: Krishna Dhapa',
-    'author_email' => 'sanjay@nitsan.in',
-    'author_company' => 'T3Planet // NITSAN',
+    'description' => 'Easily display your TYPO3 news images in an attractive and responsive slick slider. Enhance user engagement by showcasing featured news articles with a modern and flexible carousel layout.',
+    'category' => 'plugin',
+    'author' => 'Team T3Planet',
+    'author_email' => 'info@t3planet.de',
+    'author_company' => 'T3Planet',
     'state' => 'stable',
     'internal' => '',
     'uploadfolder' => 0,
     'createDirs' => '',
-    'version' => '13.0.0',
+    'clearCacheOnLoad' => 0,
+    'version' => '1.0.2',
     'constraints' => [
         'depends' => [
-            'typo3' => '12.0.0-13.9.99',
-            'news' => '12.0.0-12.9.99',
+            'typo3' => '6.2.0-9.9.99',
+            'news' => '3.0.0-7.9.99',
         ],
         'conflicts' => [],
         'suggests' => [],
