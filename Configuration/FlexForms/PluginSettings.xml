@@ -5,14 +5,11 @@
 	<sheets>
 		<sDEF>
 			<ROOT>
-				<TCEforms>
 					<sheetTitle>LLL:EXT:news/Resources/Private/Language/locallang_be.xlf:flexforms_tab.settings</sheetTitle>
-				</TCEforms>
 				<type>array</type>
 				<el>
 					<!-- single news -->
 					<settings.singleNews>
-						<TCEforms>
 							<label>LLL:EXT:news/Resources/Private/Language/locallang_be.xlf:flexforms_general.singleNews</label>
 							<config>
 								<type>group</type>
@@ -22,12 +19,10 @@
 								<maxitems>1</maxitems>
 								<minitems>0</minitems>
 							</config>
-						</TCEforms>
 					</settings.singleNews>
 
 					<!-- settings.previewHiddenRecords -->
 					<settings.previewHiddenRecords>
-						<TCEforms>
 							<label>LLL:EXT:news/Resources/Private/Language/locallang_be.xlf:flexforms_general.previewHiddenRecords</label>
 							<config type="array">
 								<type>select</type>
@@ -49,13 +44,11 @@
 								<size type="integer">1</size>
 								<maxitems type="integer">1</maxitems>
 							</config>
-						</TCEforms>
 					</settings.previewHiddenRecords>
 
 					<!-- startingpoint -->
 					<settings.startingpoint>
-						<TCEforms>
-							<label>LLL:EXT:lang/Resources/Private/Language/locallang_general.xlf:LGL.startingpoint</label>
+							<label>LLL:EXT:ns_news_slick/Resources/Private/Language/locallang_db.xlf:LGL.startingpoint</label>
 							<config>
 								<type>group</type>
 								<internal_type>db</internal_type>
@@ -64,13 +57,11 @@
 								<maxitems>50</maxitems>
 								<minitems>0</minitems>
 							</config>
-						</TCEforms>
 					</settings.startingpoint>
 
 					<!-- recursive -->
 					<settings.recursive>
-						<TCEforms>
-							<label>LLL:EXT:lang/Resources/Private/Language/locallang_general.xlf:LGL.recursive</label>
+							<label>LLL:EXT:ns_news_slick/Resources/Private/Language/locallang_db.xlf:LGL.recursive</label>
 							<config>
 								<type>select</type>
 								<renderType>selectSingle</renderType>
@@ -105,21 +96,17 @@
 									</numIndex>
 								</items>
 							</config>
-						</TCEforms>
 					</settings.recursive>
 				</el>
 			</ROOT>
 		</sDEF>
 		<additional>
 			<ROOT>
-				<TCEforms>
 					<sheetTitle>LLL:EXT:news/Resources/Private/Language/locallang_be.xlf:flexforms_tab.additional</sheetTitle>
-				</TCEforms>
 				<type>array</type>
 				<el>
 					<!-- PID Detail Page -->
 					<settings.detailPid>
-						<TCEforms>
 							<label>LLL:EXT:news/Resources/Private/Language/locallang_be.xlf:flexforms_additional.detailPid</label>
 							<config>
 								<type>group</type>
@@ -129,12 +116,10 @@
 								<maxitems>1</maxitems>
 								<minitems>0</minitems>
 							</config>
-						</TCEforms>
 					</settings.detailPid>
 
 					<!-- PID List Page -->
 					<settings.listPid>
-						<TCEforms>
 							<label>LLL:EXT:news/Resources/Private/Language/locallang_be.xlf:flexforms_additional.listPid</label>
 							<config>
 								<type>group</type>
@@ -144,12 +129,10 @@
 								<maxitems>1</maxitems>
 								<minitems>0</minitems>
 							</config>
-						</TCEforms>
 					</settings.listPid>
 
 					<!-- PID Back -->
 					<settings.backPid>
-						<TCEforms>
 							<label>LLL:EXT:news/Resources/Private/Language/locallang_be.xlf:flexforms_additional.backPid</label>
 							<config>
 								<type>group</type>
@@ -159,12 +142,10 @@
 								<maxitems>1</maxitems>
 								<minitems>0</minitems>
 							</config>
-						</TCEforms>
 					</settings.backPid>
 
 					<!-- Tags -->
 					<settings.tags>
-						<TCEforms>
 							<label>LLL:EXT:news/Resources/Private/Language/locallang_be.xlf:flexforms_additional.tags</label>
 							<config>
 								<type>group</type>
@@ -174,28 +155,23 @@
 								<minitems>0</minitems>
 								<maxitems>99</maxitems>
 							</config>
-						</TCEforms>
 					</settings.tags>
 
 					<!-- only not displayed news -->
 					<settings.excludeAlreadyDisplayedNews>
-						<TCEforms>
 							<label>LLL:EXT:news/Resources/Private/Language/locallang_be.xlf:flexforms_additional.excludeAlreadyDisplayedNews</label>
 							<config>
 								<type>check</type>
 							</config>
-						</TCEforms>
 					</settings.excludeAlreadyDisplayedNews>
 
 					<!-- disable overrideDemand -->
 					<settings.disableOverrideDemand>
-						<TCEforms>
 							<label>LLL:EXT:news/Resources/Private/Language/locallang_be.xlf:flexforms_additional.disableOverrideDemand</label>
 							<config>
 								<type>check</type>
 								<default>1</default>
 							</config>
-						</TCEforms>
 					</settings.disableOverrideDemand>
 				</el>
 			</ROOT>
@@ -208,51 +184,42 @@
 		-->
 		<template>
 			<ROOT>
-				<TCEforms>
 					<sheetTitle>LLL:EXT:news/Resources/Private/Language/locallang_be.xlf:flexforms_tab.template</sheetTitle>
-				</TCEforms>
 				<type>array</type>
 				<el>
 
 					<!-- Image Width -->
 					<settings.media.maxWidth>
-						<TCEforms>
 							<label>LLL:EXT:news/Resources/Private/Language/locallang_be.xlf:flexforms_template.mediaMaxWidth</label>
 							<config>
 								<type>input</type>
 								<size>5</size>
 								<eval>num</eval>
 							</config>
-						</TCEforms>
 					</settings.media.maxWidth>
 
 					<!-- Image Height -->
 					<settings.media.maxHeight>
-						<TCEforms>
 							<label>LLL:EXT:news/Resources/Private/Language/locallang_be.xlf:flexforms_template.mediaMaxHeight</label>
 							<config>
 								<type>input</type>
 								<size>5</size>
 								<eval>num</eval>
 							</config>
-						</TCEforms>
 					</settings.media.maxHeight>
 
 					<!-- crop length Teaser -->
 					<settings.cropMaxCharacters>
-						<TCEforms>
 							<label>LLL:EXT:news/Resources/Private/Language/locallang_be.xlf:flexforms_template.cropMaxCharacters</label>
 							<config>
 								<type>input</type>
 								<size>5</size>
 								<eval>num</eval>
 							</config>
-						</TCEforms>
 					</settings.cropMaxCharacters>
 
 					<!-- Template Layout -->
 					<settings.templateLayout>
-						<TCEforms>
 							<label>LLL:EXT:news/Resources/Private/Language/locallang_be.xlf:flexforms_template.templateLayout</label>
 							<config>
 								<type>select</type>
@@ -265,7 +232,6 @@
 									</numIndex>
 								</items>
 							</config>
-						</TCEforms>
 					</settings.templateLayout>
 				</el>
 			</ROOT>
@@ -275,17 +241,15 @@
 			########################################-->
 		<slickSlider>
 			<ROOT>
-				<TCEforms>
 					<sheetTitle>LLL:EXT:ns_news_slick/Resources/Private/Language/locallang_db.xlf:flexforms_tab.slickSlider</sheetTitle>
-				</TCEforms>
 				<type>array</type>
 				<el>
 					<settings.slicksliderType>
-						<TCEforms>
 							<label>LLL:EXT:ns_news_slick/Resources/Private/Language/locallang_db.xlf:flexform.slicksliderType</label>
 							<onChange>reload</onChange>
 							<config>
 								<type>select</type>
+                                <renderType>selectSingle</renderType>
 								<items>
 									<numIndex index="1">
 										<numIndex index="0">LLL:EXT:ns_news_slick/Resources/Private/Language/locallang_db.xlf:slider_type.singleItem</numIndex>
@@ -300,8 +264,8 @@
 										<numIndex index="1">responsive</numIndex>
 									</numIndex>
 								</items>
+								<default>single</default>
 							</config>
-						</TCEforms>
 					</settings.slicksliderType>
 					<!-- common start-->
 					<settings.slideToShow>
@@ -336,6 +300,8 @@
 							<type>input</type>
 							<eval>int</eval>
 							<size>5</size>
+							<default>300</default>
+							<required>true</required>
 						</config>
 					</settings.slideSpeed>
 					<settings.variableWidth>
@@ -346,11 +312,11 @@
 						</config>
 					</settings.variableWidth>
 					<settings.transitionType>
-						<TCEforms>
 							<label>LLL:EXT:ns_news_slick/Resources/Private/Language/locallang_db.xlf:flexform.transitionType</label>
 							<displayCond>FIELD:settings.slicksliderType:=:single</displayCond>
 							<config>
 								<type>select</type>
+                                <renderType>selectSingle</renderType>
 								<items>
 									<numIndex index="1">
 										<numIndex index="0">Move</numIndex>
@@ -362,74 +328,59 @@
 									</numIndex>
 								</items>
 							</config>
-						</TCEforms>
 					</settings.transitionType>
 					<settings.dots>
-						<TCEforms>
 							<label>LLL:EXT:ns_news_slick/Resources/Private/Language/locallang_db.xlf:flexform.dots</label>
 							<config>
 								<type>check</type>
 							</config>
-						</TCEforms>
 					</settings.dots>
 					<settings.loop>
-						<TCEforms>
 							<label>LLL:EXT:ns_news_slick/Resources/Private/Language/locallang_db.xlf:flexform.loop</label>
 							<config>
 								<type>check</type>
 							</config>
-						</TCEforms>
 					</settings.loop>
 					<settings.autoScaleSlider>
-						<TCEforms>
 							<label>LLL:EXT:ns_news_slick/Resources/Private/Language/locallang_db.xlf:flexform.autoScaleSlider</label>
 							<displayCond>FIELD:settings.slicksliderType:=:single</displayCond>
 							<config>
 								<type>check</type>
 							</config>
-						</TCEforms>
 					</settings.autoScaleSlider>
 					<settings.autoPlay>
-						<TCEforms>
 							<label>LLL:EXT:ns_news_slick/Resources/Private/Language/locallang_db.xlf:flexform.autoPlay</label>
 							<onChange>reload</onChange>
 							<config>
 								<type>check</type>
 							</config>
-						</TCEforms>
 					</settings.autoPlay>
 					<settings.autoplaySpeed>
-						<TCEforms>
-							<label>LLL:EXT:ns_news_slick/Resources/Private/Language/locallang_db.xlf:flexform.autospeed</label>
+								<label>LLL:EXT:ns_news_slick/Resources/Private/Language/locallang_db.xlf:flexform.autospeed</label>
 							<displayCond>FIELD:settings.autoPlay:=:1</displayCond>
 							<config>
-								<type>input</type>
-								<default>1000</default>
+								<type>number</type>
+								<default>3000</default>
+								<required>true</required>
 								<size>5</size>
 							</config>
-						</TCEforms>
 					</settings.autoplaySpeed>
 					<settings.pauseOnHover>
-						<TCEforms>
 							<label>LLL:EXT:ns_news_slick/Resources/Private/Language/locallang_db.xlf:flexform.pauseOnHover</label>
 							<displayCond>FIELD:settings.autoPlay:=:1</displayCond>
 							<config>
 								<type>check</type>
 							</config>
-						</TCEforms>
 					</settings.pauseOnHover>
 					<settings.centerMode>
-						<TCEforms>
 							<label>LLL:EXT:ns_news_slick/Resources/Private/Language/locallang_db.xlf:flexform.centerMode</label>
 							<displayCond>FIELD:settings.slicksliderType:IN:responsive,multiple</displayCond>
 							<onChange>reload</onChange>
 							<config>
 								<type>check</type>
 							</config>
-						</TCEforms>
 					</settings.centerMode>
 					<settings.centerPadding>
-						<TCEforms>
 							<label>LLL:EXT:ns_news_slick/Resources/Private/Language/locallang_db.xlf:flexform.centerPadding</label>
 							<displayCond>
 								<and>
@@ -447,7 +398,6 @@
 									<upper>200</upper>
 								</range>
 							</config>
-						</TCEforms>
 					</settings.centerPadding>
 					<!-- common end-->
 				</el>

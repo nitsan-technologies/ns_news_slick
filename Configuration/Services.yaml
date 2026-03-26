@@ -1,0 +1,14 @@
+services:
+  _defaults:
+    autowire: true
+    autoconfigure: true
+    public: false
+
+  NITSAN\NsNewsSlick\:
+    resource: '../Classes/*'
+
+  NITSAN\NsNewsSlick\Event\PageLayoutView:
+    tags:
+      - name: event.listener
+        identifier: 'ns-news-slick-flexform-process'
+        event: TYPO3\CMS\Backend\View\Event\PageContentPreviewRenderingEvent

@@ -117,3 +117,8 @@
 .slick-arrow.slick-hidden {
     display: none;
 }
+
+[aria-current="page"] {
+    /* Special style for the current page link */
+    color: red;
+}

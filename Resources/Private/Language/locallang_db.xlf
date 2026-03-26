@@ -132,6 +132,13 @@
 			<trans-unit id="flexform.disableOverrideDemand">
 				<source>Override Demand</source>
 			</trans-unit>
+            <trans-unit id="LGL.startingpoint">
+				<source>Startingpoint</source>
+			</trans-unit>
+            <trans-unit id="LGL.recursive">
+				<source>Recursive</source>
+			</trans-unit>
+
 		</body>
 	</file>
 </xliff>

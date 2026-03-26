@@ -1,44 +1,50 @@
 <?php
+
+declare(strict_types=1);
+
 namespace NITSAN\NsNewsSlick\Controller;
 
-use TYPO3\CMS\Core\Utility\GeneralUtility;
+use Psr\Http\Message\ResponseInterface;
+use GeorgRinger\News\Controller\NewsController;
+use GeorgRinger\News\Domain\Repository\NewsRepository;
 
 /***
  *
- * This file is part of the "[NITSAN] News Slick Slider" Extension for TYPO3 CMS.
+ * This file is part of the "News Slick Slider" Extension for TYPO3 CMS.
  *
  * For the full copyright and license information, please read the
  * LICENSE.txt file that was distributed with this source code.
  *
- *  (c) 2019 NITSAN Technologies <sanjay@nitsan.in>
+ *  (c) 2023 NITSAN Technologies <sanjay@nitsan.in>
  *
  ***/
 
 /**
  * NewsSlickSliderController
  */
-class NewsSlickSliderController extends \GeorgRinger\News\Controller\NewsController
+class NewsSlickSliderController extends NewsController
 {
     /**
-     * @var \GeorgRinger\News\Domain\Repository\NewsRepository
+     * @var NewsRepository
      */
-    protected $newsRepository;
+    protected NewsRepository $newsRepository;
 
     /**
       * action list
       *
-      * @return void
+      * @return ResponseInterface
       */
-    public function slickSliderAction()
+    public function slickSliderAction(): ResponseInterface
     {
-        $newsParam = GeneralUtility::_GP('tx_news_pi1');
+        $newsParam = $this->request->getQueryParams()['tx_news_pi1'] ?? null;
         if ($this->settings['singleNews']) {
             $newsId = $this->settings['singleNews'];
         } else {
-            $newsId = $newsParam['news'];
+            $newsId = $newsParam['news'] ?? 0;
         }
 
         $news = $this->newsRepository->findByUid($newsId);
         $this->view->assign('newsItem', $news);
+        return $this->htmlResponse();
     }
 }
