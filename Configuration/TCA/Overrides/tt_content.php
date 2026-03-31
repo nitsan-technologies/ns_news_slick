@@ -19,7 +19,7 @@ $ctypeKey = ExtensionUtility::registerPlugin(
 /* Flexform configuration for the slider : START */
 ExtensionManagementUtility::addToAllTCAtypes(
     'tt_content',
-    '--div--;Configuration,pi_flexform,pages',
+    '--div--;Configuration,pi_flexform',
     $ctypeKey,
     'after:subheader',
 );
