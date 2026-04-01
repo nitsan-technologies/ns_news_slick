@@ -28,8 +28,6 @@ final class PageLayoutView
             $row = $event->getRecord()->toArray();
         }
         if ($row['CType'] == 'list' && $row['list_type'] == 'nsnewsslick_newsslickslider') {
-            $drawItem = false;
-            $headerContent = '';
             // template
             $view = $this->getFluidTemplate($extKey, 'NsNewsSlick');
             if (!empty($row['pi_flexform'])) {
@@ -39,7 +37,6 @@ final class PageLayoutView
 
             // assign all to view
             $view->assignMultiple([
-                //'data' => $row,
                 'flexformData' => $this->flexFormService->convertFlexFormContentToArray($row['pi_flexform']),
             ]);
 

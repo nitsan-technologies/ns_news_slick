@@ -1,13 +1,13 @@
 categories:
   ns_news_slick:
-    label: News Slider
+    label: Slick Slider Settings
 
   ns_news_slick.view:
-    label: View
+    label: View Settings
     parent: ns_news_slick
 
   ns_news_slick.configuration:
-    label: Configuration
+    label: Configuration Settings
     parent: ns_news_slick
 
 
