@@ -15,31 +15,11 @@ plugin.tx_nsnewsslick {
             1 = {$ns_news_slick.view.layoutRootPath}
         }
     }
-    settings {
-        detail {
-            media {
-                image {
-                    maxWidth = 550
-                    maxHeight =
-                }
-            }
-        }
-    }
 }
 
 page {
-    includeCSS {
-        slick = EXT:ns_news_slick/Resources/Public/css/slick.css
-        slicktheme = EXT:ns_news_slick/Resources/Public/css/slick-theme.css
-        nsslick = EXT:ns_news_slick/Resources/Public/css/nsslick.css
-    }
     includeJSLibs {
         nsslickjquery = EXT:ns_news_slick/Resources/Public/js/jquery-3.4.1.min.js
         nsslickjquery.if.isTrue = {$ns_news_slick.configuration.jQuery}
     }
-    includeJSFooter {
-        slickjs = EXT:ns_news_slick/Resources/Public/js/slick.js
-        nsslickjs = EXT:ns_news_slick/Resources/Public/js/nsslick.js
-    }
-    settings < plugin.tx_nsnewsslick.settings
 }
