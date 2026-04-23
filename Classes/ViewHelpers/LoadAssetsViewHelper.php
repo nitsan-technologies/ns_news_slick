@@ -13,9 +13,6 @@ use TYPO3Fluid\Fluid\Core\ViewHelper\AbstractViewHelper;
  */
 class LoadAssetsViewHelper extends AbstractViewHelper
 {
-    // use CompileWithRenderStatic;
-
-
     /**
      * @var string
      */
