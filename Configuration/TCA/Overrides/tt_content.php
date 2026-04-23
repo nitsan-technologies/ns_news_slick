@@ -8,7 +8,7 @@ defined('TYPO3') or die();
 /**
  * Plugin register
  */
-ExtensionUtility::registerPlugin(
+$ctypeKey = ExtensionUtility::registerPlugin(
     'NsNewsSlick',
     'Newsslickslider',
     'News Slick Slider',
@@ -17,10 +17,16 @@ ExtensionUtility::registerPlugin(
 );
 
 /* Flexform configuration for the slider : START */
-$GLOBALS['TCA']['tt_content']['types']['list']['subtypes_excludelist']['nsnewsslick_newsslickslider'] = 'layout,select_key,pages,recursive';
-$GLOBALS['TCA']['tt_content']['types']['list']['subtypes_addlist']['nsnewsslick_newsslickslider'] = 'pi_flexform';
+ExtensionManagementUtility::addToAllTCAtypes(
+    'tt_content',
+    '--div--;Configuration,pi_flexform',
+    $ctypeKey,
+    'after:subheader',
+);
+// @extensionScannerIgnoreLine
 ExtensionManagementUtility::addPiFlexFormValue(
-    'nsnewsslick_newsslickslider',
-    'FILE:EXT:ns_news_slick/Configuration/FlexForms/PluginSettings.xml'
+    '*',
+    'FILE:EXT:ns_news_slick/Configuration/FlexForms/PluginSettings.xml',
+    $ctypeKey,
 );
 /* Flexform configuration for the slider : END */

@@ -1,0 +1,43 @@
+categories:
+  ns_news_slick:
+    label: Slick Slider Settings
+
+  ns_news_slick.view:
+    label: View Settings
+    parent: ns_news_slick
+
+  ns_news_slick.configuration:
+    label: Configuration Settings
+    parent: ns_news_slick
+
+
+settings:
+  ##################################################
+  # View
+  ##################################################
+  ns_news_slick.view.templateRootPath:
+    label: Path to template root (FE)
+    category: ns_news_slick.view
+    type: string
+    default: 'EXT:ns_news_slick/Resources/Private/Templates/'
+
+  ns_news_slick.view.partialRootPath:
+    label: Path to template partials (FE)
+    category: ns_news_slick.view
+    type: string
+    default: 'EXT:ns_news_slick/Resources/Private/Partials/'
+
+  ns_news_slick.view.layoutRootPath:
+    label: Path to template layouts (FE)
+    category: ns_news_slick.view
+    type: string
+    default: 'EXT:ns_news_slick/Resources/Private/Layouts/'
+
+  ##################################################
+  # jQuery
+  ##################################################
+  ns_news_slick.configuration.jQuery:
+    label: Include jQuery
+    category: ns_news_slick.configuration
+    type: bool
+    default: true
