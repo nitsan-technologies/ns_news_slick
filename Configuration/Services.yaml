@@ -12,3 +12,10 @@ services:
       - name: event.listener
         identifier: 'ns-news-slick-flexform-process'
         event: TYPO3\CMS\Backend\View\Event\PageContentPreviewRenderingEvent
+
+  NITSAN\NsNewsSlick\EventListener\PremiumStripPreview:
+    tags:
+      - name: event.listener
+        identifier: 'ns-news-slick/premium-strip-preview'
+        event: TYPO3\CMS\Backend\View\Event\PageContentPreviewRenderingEvent
+        after: 'ns-news-slick-flexform-process'
