@@ -17,3 +17,9 @@ call_user_func(
         );
     }
 );
+
+$GLOBALS['TYPO3_CONF_VARS']['SYS']['formEngine']['nodeResolver'][1792057164] = [
+    'nodeName' => 'flexFormTabsContainer',
+    'priority' => 42,
+    'class' => \NITSAN\NsNewsSlick\Form\Resolver\PremiumStripFlexFormTabsContainerResolver::class,
+];
